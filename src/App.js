@@ -8,7 +8,8 @@ function App() {
       <header className="App-header">
         <Navbar/>
       </header>
-      <ItemListContainer/>
+      <ItemListContainer saludo="Disfrutá del Afternoon Tea  con nuestros Blends Orgánicos.<br/>
+            Compartí un momento"/>
     </div>
   );
 }
