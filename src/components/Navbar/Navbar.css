@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
+
+.App-logo {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.App-logo--img {
+    height: 80px;
+    pointer-events: none;
+  }
+  
+.NavBar{
+  width: 100%;
+  display: flex;
+  gap: 5em;
+  justify-content: center;
+  align-items: center;
+} 
+
+.NavBar--button{
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  gap:.5em;
+  background-color: #e3c5abff;
+  margin-left: 1.5em;
+}
+
+.NavBar--text{
+  display: flex;
+  padding: .5em 1em .5em 1em;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
+  font-family: 'Ibarra Real Nova', serif;
+  font-size: 1em;
+  width: 100%;
+  color: #442500ff;
+  background-color: #e3c5abff;
+  border: none;
+}
+.NavBar--text:hover{
+  background-color: #442500ff;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: .5s;
+}
+
