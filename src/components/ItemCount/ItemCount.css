@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
+
+.ItemCount{
+    background-color: #ece0d2ff;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:3em
+}
+.ItemCount__contenido{
+    display: flex;
+    gap:5em;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ibarra Real Nova', serif;
+}
+button{
+    width: 5%;
+    height: 20px;
+    border: none;
+    font-size: 1em;
+    font-family: 'Ibarra Real Nova', serif;
+}
+.btnAgregar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 50px;
+    background-color: #efa164ff;
+    color: #442500ff;
+    font-size: 1.2em;
+}
+.btnAgregar:hover{
+    background-color: #442500ff;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: .5s;
+  }
+.cantidad{
+    font-size: 1.5em;
+}
