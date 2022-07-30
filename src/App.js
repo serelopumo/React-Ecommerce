@@ -4,9 +4,9 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemCount from "./components/ItemCount/ItemCount";
 
 function App() {
-  const handleOnAdd = (cantidad) =>{
-    console.log(`Perfecto agregaste al carrito ${cantidad} productos`)
-  }
+  const handleOnAdd = (cantidad) => {
+    console.log(`Perfecto agregaste al carrito ${cantidad} productos`);
+  };
   return (
     <div className="App">
       <header className="App-header">
