@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
 
 .ItemCount{
+    width: 100%;
     background-color: #ece0d2ff;
     height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:3em
+    gap:1em;
 }
 .ItemCount__contenido{
     display: flex;
@@ -28,11 +29,11 @@ button{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    height: 50px;
+    width: 80%;
+    height: 70px;
     background-color: #efa164ff;
     color: #442500ff;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 .btnAgregar:hover{
     background-color: #442500ff;

@@ -1,18 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
+button{
+  border:none;
+}
 .App {
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
+  background-color: #ece0d2ff;
+  font-family: 'Ibarra Real Nova', serif;
 }
 
 
 .App-header {
-  background: linear-gradient(90deg, rgba(182,213,207,1) 1%, rgba(203,207,176,1) 67%);
   min-height: 30vh;
   display: flex;
   flex-direction: column;

@@ -1,0 +1,35 @@
+.ItemContain{
+    width: 100%;
+    display:flex;
+    gap: 3em;
+    justify-content: center;
+    align-items: flex-start;
+}
+.ItemContain img{
+    width: 50%;
+}
+.ItemContain__text{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1em;
+}
+.ItemContain__text h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    font-size: 2em;
+}
+.ItemContain__text p{
+    text-align: center;
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 1.2em;
+}

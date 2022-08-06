@@ -3,10 +3,17 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:.5em;
+    gap:.2em;
+    align-self: center;
 }
 .Item h3{
-    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 80%;
+    font-size: 1em;
     font-weight: 300;
 }
 .Item h4{
@@ -18,24 +25,36 @@
 }
 .Item__content{
     display: flex;
-    justify-content:space-between;
+    justify-content:center;
     align-items: center;
     gap:2em;
+    align-self: center;
+    width: 100%;
 }
 .Item__detalle{
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap:.5em;
+    align-self: center;
 }
 .btnDetalle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #442500ff;;
+    text-decoration: none;
+    width: 50%;
+    align-self: center;
     font-weight: 600;
     letter-spacing: .05em;
     font-size: 1em;
     width: 150px;
     height: 50px;
     background-color: #e3c5abff;
+    font-family: 'Ibarra Real Nova', serif;
 }
 .btnDetalle:hover{
     background-color: #442500ff;

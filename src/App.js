@@ -1,19 +1,21 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemCount from "./components/ItemCount/ItemCount";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
 function App() {
-  const handleOnAdd = (cantidad) => {
-    console.log(`Perfecto agregaste al carrito ${cantidad} productos`);
-  };
   return (
     <div className="App">
-      <header className="App-header">
-        <Navbar />
-      </header>
-      <ItemListContainer saludo="Disfrutá del Afternoon Tea  con nuestros Blends Orgánicos. Compartí un momento" />
-      <ItemCount onAdd={handleOnAdd} stock={5} initial={1} />
+      <BrowserRouter>
+      <Navbar className="App-header"/>
+        <Routes>
+            <Route exact path='/' element={<ItemListContainer saludo="Disfrutá del Afternoon Tea  con nuestros Blends Orgánicos. Compartí un momento" />}/>
+            <Route exact path ='/category/:categoryId' element={<ItemListContainer saludo='Listado filtrado' />}/>
+            <Route path='/detail/:productId' element={<ItemDetailContainer />} />  
+            <Route path='*' element={<h1>404 NOT FOUND</h1>} /> 
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

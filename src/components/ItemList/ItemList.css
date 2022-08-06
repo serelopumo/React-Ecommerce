@@ -1,8 +1,9 @@
 .Item--div{
-    gap:.2em;
+    gap:.5em;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    align-self: center;
 }
