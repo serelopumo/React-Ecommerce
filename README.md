@@ -8,7 +8,10 @@ $ cd comision34695sab
 $ npm install
 $ npm start
 
-## Routes
+## Navegar por las 3 categorías de la página
 
+- ✨ Blends de tés: http://localhost:3000/category/blends
+- Biscuits: http://localhost:3000/category/biscuits
+- Teteras: http://localhost:3000/category/teteras ✨
 
 
