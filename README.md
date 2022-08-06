@@ -18,4 +18,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 -Detalle de producto: http://localhost:3000/detail/productid
 
+## Vista
+
 ![ecommerce-tea (2)](https://user-images.githubusercontent.com/100161377/183259699-ace178ec-b7e5-43b1-abc0-ad7bbb0698a7.gif)
