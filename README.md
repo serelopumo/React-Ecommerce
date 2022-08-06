@@ -8,8 +8,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - $ npm install
 - $ npm start
 
-## Navegar por las 3 categorías de la página
+## Navegar por las categorías de la página
 
+- 🏠 Home: http://localhost:3000 🏠
 - 🍵 Blends de tés: http://localhost:3000/category/blends 🍵
 - 🍪 Biscuits: http://localhost:3000/category/biscuits 🍪
 - ☕ Teteras: http://localhost:3000/category/teteras ☕
