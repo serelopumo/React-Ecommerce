@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({onAdd,stock,initial,price}) =>{
+const ItemCount = ({stock = 0, initial = 1, onAdd,price}) =>{
     const [count,setCount] = useState(initial)
     const agregar = ()=>{
         (count >= stock) ? alert("No hay suficiente stock")  : setCount(count + 1) 
