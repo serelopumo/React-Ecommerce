@@ -35,7 +35,9 @@ const ItemListContainer = ({ saludo }) => {
   if (loading) {
     return <h1>Cargando productos...</h1>;
   }
-
+    if(products.length === 0) {
+        return categoryId ? <h1>No hay productos {categoryId}</h1> : <h1>No hay productos disponibles</h1>
+    }
   return (
     <div className="ItemListContainer">
       <h2>{saludo}</h2>

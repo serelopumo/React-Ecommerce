@@ -1,0 +1,13 @@
+.DetalleProducto{
+    background-color: blanchedalmond;
+    display: flex;
+    min-height: 100px;
+    gap:2em;
+    justify-content: center;
+    align-items: center;
+}
+.btnVolverHome{
+    width: 100px;
+    height: 50px;
+    background-color: azure;
+}

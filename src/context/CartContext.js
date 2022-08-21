@@ -26,15 +26,32 @@ export const CartContextProvider = ({ children }) => {
   const clear = () => {
     setCart([]);
   };
+
   const getQuantity = () => {
     let accu = 0
     cart.forEach(product => {
     accu += product.quantity
-    console.log(accu)
     })
 
     return accu
 }
+
+
+const traerCarrito = ()=>{
+  const carrito= cart.map((product) => {
+    return (
+      <div className="DetalleProducto" key={product.id}>
+        <h3>{product.tittle}</h3>
+        <h3>Cantidad: {product.quantity}</h3>
+        <h3>Precio: ${product.price}</h3>
+        {console.log(product.id)}
+        <button onClick={()=> removeItem(product.id)}>Eliminar</button>
+      </div>
+    )
+  })
+  return carrito
+}
+
   const removeItem = (id) => {
     const newCartWithoutProduct = cart.filter((product) => product.id !== id);
     setCart(newCartWithoutProduct);
@@ -46,8 +63,9 @@ export const CartContextProvider = ({ children }) => {
     const product = cart.find((prod) => prod.id === id);
     return product?.quantity;
   };
+ 
   return (
-    <CartContext.Provider value={{ cart, clear, isInCart, addItem, removeItem, getProductQuantity,getQuantity }}>
+    <CartContext.Provider value={{ cart, clear, isInCart, addItem, removeItem, getProductQuantity,getQuantity,traerCarrito }}>
       {children}
     </CartContext.Provider>
   );

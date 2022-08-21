@@ -8,8 +8,9 @@ const CartWidget = () => {
  
     return(
         <div className="cartWidget">
-            <img className="cartWidget--image" src='/images/shopping-cart.png' alt="card-widget"/>
-            <h4 className="cartWidget--text">{cantidad}</h4>
+            {cantidad>0?<> <img className="cartWidget--image" src='/images/shopping-cart.png' alt="card-widget"/>
+            <h4 className="cartWidget--text">{cantidad}</h4></>:<></>}
+           
         </div>
     )
 }

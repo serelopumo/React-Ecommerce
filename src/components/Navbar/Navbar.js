@@ -15,7 +15,9 @@ const Navbar = () => {
 					<img src='/images/logo.png' className="App-logo--img" alt="logo" />
 				</Link>
 			</div>
-			<CartWidget />
+			<Link to={'/cart'}>
+				<CartWidget />
+			</Link>
 		</nav>
 	);
 };
