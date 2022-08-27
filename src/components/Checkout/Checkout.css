@@ -1,0 +1,13 @@
+.orden{
+    width: 100px;
+    font-size: 1em;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #442500ff;
+    color: whitesmoke;
+    margin-left: 30em;
+    margin-top: 5em;
+    cursor: pointer;
+}

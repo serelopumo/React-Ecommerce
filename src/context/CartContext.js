@@ -1,10 +1,10 @@
 import { createContext, useState } from "react";
+import './CartContext.css';
 
 const CartContext = createContext();
 
 export const CartContextProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  console.log(cart)
   const addItem = (item) => {
     if (!isInCart(item.id)) {
       setCart([...cart, item]);
@@ -32,7 +32,6 @@ export const CartContextProvider = ({ children }) => {
     cart.forEach(product => {
     accu += product.quantity
     })
-
     return accu
 }
 
@@ -44,8 +43,8 @@ const traerCarrito = ()=>{
         <h3>{product.tittle}</h3>
         <h3>Cantidad: {product.quantity}</h3>
         <h3>Precio: ${product.price}</h3>
-        {console.log(product.id)}
-        <button onClick={()=> removeItem(product.id)}>Eliminar</button>
+        <h3>Subtotal: ${getProductSubtotal(product.id)}</h3>
+        <button className="btnEliminar" onClick={()=> removeItem(product.id)}>Eliminar</button>
       </div>
     )
   })
@@ -63,9 +62,21 @@ const traerCarrito = ()=>{
     const product = cart.find((prod) => prod.id === id);
     return product?.quantity;
   };
- 
+  const getProductSubtotal = (id) => {
+    const product = cart.find((prod) => prod.id === id);
+    const subtotal = product?.price * product.quantity;
+    return subtotal;
+  };
+  const getTotal = () => {
+    let accu = 0
+    cart.forEach(prod => {
+        accu += prod.quantity * prod.price
+    })
+    return accu
+}
+
   return (
-    <CartContext.Provider value={{ cart, clear, isInCart, addItem, removeItem, getProductQuantity,getQuantity,traerCarrito }}>
+    <CartContext.Provider value={{ cart, clear, isInCart, addItem, removeItem, getProductQuantity,getQuantity,traerCarrito,getProductSubtotal, getTotal}}>
       {children}
     </CartContext.Provider>
   );

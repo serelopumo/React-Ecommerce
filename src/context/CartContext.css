@@ -1,0 +1,9 @@
+.btnEliminar{
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #442500ff;
+    font-size: 1.2em;
+    background-color: rgb(239, 209, 177);
+}

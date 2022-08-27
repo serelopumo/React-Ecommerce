@@ -3,11 +3,11 @@ import ItemCount from "../ItemCount/ItemCount";
 import {useState, useContext} from 'react';
 import CartContext from '../../context/CartContext';
 import { Link } from 'react-router-dom';
-
+import NotificationContext from '../../notification/Notification'
 
 const ItemDetail = ({id,tittle,price,description,pictureUrl,stock}) =>{
     const [quantityToAdd, setQuantityToAdd] = useState(0)
-
+    const { setNotification } = useContext(NotificationContext)
     const { addItem, getProductQuantity } = useContext(CartContext)
     
 
@@ -17,7 +17,7 @@ const ItemDetail = ({id,tittle,price,description,pictureUrl,stock}) =>{
         const productToAdd = {
             id, tittle, price, quantity
         }
-
+        setNotification('success', `Felicitaciones, agregaste ${quantity} ${tittle}/s`)
         addItem(productToAdd)
     }
 
