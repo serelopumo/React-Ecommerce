@@ -14,7 +14,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 =======
 ## Navegar por las 3 categorías de la página
 
->>>>>>> 13e1c0c48f4c944d0ed5e0d8cbee520a96139c3f
 - 🍵 Blends de tés: http://localhost:3000/category/blends 🍵
 - 🍪 Biscuits: http://localhost:3000/category/biscuits 🍪
 - ☕ Teteras: http://localhost:3000/category/teteras ☕
