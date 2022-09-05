@@ -4,11 +4,17 @@ import './Checkout.css'
 import { db } from "../../services/firebase"
 import { addDoc, collection, getDocs, query, where, documentId, writeBatch } from "firebase/firestore"
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Checkout = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [orderCreated, setOrderCreated] = useState(false)
-    const { cart, getQuantity, getTotal, clearCart } = useContext(CartContext) 
+    const { cart, getQuantity, getTotal, clear } = useContext(CartContext) 
+
+    const [nombre, setNombre] = useState("")
+    const [apellido, setApellido] = useState("")
+    const [telefono, setTelefono] = useState("")
+    const [direccion, setDireccion] = useState("")
 
     const navigate = useNavigate()
 
@@ -20,10 +26,10 @@ const Checkout = () => {
         try {
             const objOrder = {
                 buyer: {
-                    firstName: 'Sere',
-                    lastName: 'Lopumo',
-                    phone: '11676382912',
-                    address: 'Bulnes 787 1c'
+                    firstName: nombre,
+                    lastName: apellido,
+                    phone: telefono,
+                    address: direccion
                 },
                 items: cart,
                 totalQuantity,
@@ -62,15 +68,24 @@ const Checkout = () => {
     
                 const orderRef = collection(db, 'orders')
                 const orderAdded = await addDoc(orderRef, objOrder)
-    
-                console.log(`El id de su orden es: ${orderAdded.id}`)
-                clearCart()
+                Swal.fire({
+                    icon: 'success',
+                    title: `El id de su orden es: ${orderAdded.id}`,
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
+                clear()
                 setOrderCreated(true)
                 setTimeout(() => {
                     navigate('/')
                 }, 3000)
             } else {
-                console.log('Hay productos que estan fuera de stock')
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Hay productos que estan fuera de stock',
+                    showConfirmButton: false,
+                    timer: 2000
+                  })
             }
         } catch (error) {
             console.log(error)
@@ -89,9 +104,15 @@ const Checkout = () => {
 
     return (
         <>
-            <h1>Tu carrito</h1>
-            <h2>Formulario</h2>
-            <button className="orden" onClick={createOrder}>Generar Orden</button>
+            <form className="form">
+                <h2>Formulario</h2>
+                <input type='text' placeholder="Nombre" value={nombre} onChange={e=> setNombre(e.target.value)}></input>
+                <input type='text' placeholder="Apellido" value={apellido} onChange={e=> setApellido(e.target.value)}></input>
+                <input type='number' placeholder="Telefono" value={telefono} onChange={e=> setTelefono(e.target.value)}></input>
+                <input type='text' placeholder="Direccion" value={direccion} onChange={e=> setDireccion(e.target.value)}></input>
+                <button className="orden" onClick={createOrder}>Generar Orden</button>
+            </form>
+           
         </>
     )
 }

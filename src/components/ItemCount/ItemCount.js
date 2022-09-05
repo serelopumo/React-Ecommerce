@@ -1,13 +1,25 @@
 import { useState } from "react";
 import "./ItemCount.css";
+import Swal from 'sweetalert2'
 
 const ItemCount = ({stock = 0, initial = 1, onAdd,price}) =>{
     const [count,setCount] = useState(initial)
     const agregar = ()=>{
-        (count >= stock) ? alert("No hay suficiente stock")  : setCount(count + 1) 
+        (count >= stock) ? 
+        Swal.fire({
+            icon: 'error',
+            title: 'No hay suficiente stock',
+            showConfirmButton: false,
+            timer: 2000
+          }): setCount(count + 1) 
     }
     const quitar = ()=>{
-        (count > 0) ? setCount(count - 1) : alert("No hay mas productos por quitar")
+        (count > 1) ? setCount(count - 1) : Swal.fire({
+            icon: 'error',
+            title: "No hay mas productos por quitar",
+            showConfirmButton: false,
+            timer: 1500
+          })
     }
     
     return(
